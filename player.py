@@ -4,7 +4,7 @@ class Player:
     def __init__(self, game):
         self.window = game.window
         self.settings = game.settings
-        self.window_rect = game.window.get_rect()
+        self.window_rect = game.window_rect
         self.image = pygame.image.load("assets/rocket.png")
         self.rect = self.image.get_rect()
         self.rect.midleft = self.window_rect.midleft
@@ -22,6 +22,11 @@ class Player:
             self.y += self.settings.player_velocity  
             
         self.rect.y = self.y    
+
+    def center_pos(self):
+        self.rect.midleft = self.window_rect.midleft
+        self.y = self.rect.y
             
 
            
+
